@@ -1,0 +1,120 @@
+-Save has notification a deposit, withdrawal or kyc verification request for administration
+-Save has notification each approved or reject request for user
+-Save has notification to each invest plan activate, credit or expired
+-Save has notification for any updated action to user
+-Save has transactions each ref_bonus, bonus, credit, debit, roi, investment capital
+
+-Save has notification each credited ref_bonus, credit, debit, roi, investment
+
+##After upload on server
+-Hide sql errors 
+-Hide connexion errors 
+
+##Review 
+-Review Withdrawal function
+-Review Autotopup function
+-Review Investment statment calcul
+-Review all function
+
+##
+
+Review 2fa Authentification settings
+
+Review credit and debit modal
+Review Send Email
+
+// Taches
+
+-Manage 2FA Authentification
+-Manage User profile
+-Manage User
+-Manage Refer User
+
+-Optimize withdrawal function
+-Optimize deposit function
+-Optimize join plan function
+-Optimize pdeposit function
+-Optimize pwithdrawal function
+-Optimize Autotopup function
+-Optimize Investment details calcul
+
+- Save for each transactions operation in tp_trasaction
+- Save for each transactions operation a notification for respective users
+- Review All Email Template
+
+
+-------------------02/06/2021 Tâches-------------
+###Upload Project
+-Put site on maintenance
+-Change database attributes
+-Change controllers
+-Change web routes
+-Change views
+-Review reject logic
+-Review All Email Template
+-Review email text
+-Review notification text
+-Review logic of app
+
+###
+Jeu de test
+
+-Register to a new user
+-Activate your account
+-Login to your dashboard
+-Authentify your account by 2fa Authentification
+-Access to your panel
+-Explore your dashboard and make some settings
+-Deposit funds on your account(amount,payment method)
+-Subscribe to a investment plan of your chooce(amount)
+    * if user has already an running investment plan, he will receive a message of unauthorization for subscribe to a new plan
+    * else investment will purchase successfully
+-See details of your investment plan
+-Subscribe to an another investment plan(amount)
+    * if user has already an running investment plan, he will receive a message of unauthorization for subscribe to a new plan
+    * else investment will purchase successfully
+-Request withdrawal(amount, invest plan, payment method)
+    *if user don't has any investment plan he will  receive errors message
+    *else if user has investment
+        + if user for this Investment plan has already made on withdrawal he will receive errors message
+        + if user balance is insuffisant he will receive errors message
+        + else if investment is running
+           ~ if roi + refer bonus is less than withdrawal amount  he will receive errors message
+           ~ else if roi + refer bonus is less than half of investment plan amount he will receive errors message of not due investment
+           ~ else if withdrawal amount is more than investment plan ROI he will receive errors message of overvalue of amount that can withdrawal
+        + else if investment is expired 
+           ~ if remain amount who can withdrawal is less than or equal 0 he will receive errors message
+           ~ if remain amount who can withdrawal is less than withdrawal amount
+                # if last user plan is the same then withdrawal investment plan he will receive errors
+                # else if last user plan is not running he will receive errors
+                # else if last user plan is running and expected return amount is less than or equal to withdrawal amount he will receive errors
+                # else request is save
+
+Request withdrawal
+    without any investment
+    without balance valide
+    amount more than balance
+    with running investment
+        without roi or/and refer bonus
+            without roi and refer bonus
+            with roi only
+            with refer bonus
+            with roi and refer bonus
+
+    with expired investment
+        without roi or/and refer bonus
+            without roi and refer bonus
+            with roi only
+            with refer bonus
+            with roi and refer bonus
+
+
+
+-------------------03/06/2021 Tâches-------------
+After account is ativate explain in a mail message billioncycle principe
+Join plan mail, notification message
+Specify link of investment details
+
+Deposit mail, notification message
+Add next step action to mail message with url
+Url  of deposit also
